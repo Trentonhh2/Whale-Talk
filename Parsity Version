@@ -1,0 +1,43 @@
+const input = 'turpentine and turtles';
+
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+const resultArray = [];
+
+// for (let I = 0; I < input.length; I++) {
+//     if (input[I] === 'e' || input[I] === 'u') {
+//         resultArray.push(input[I])
+//     }
+
+//     for (let j = 0; j < vowels.length; j++) {
+//         if (input[I].toLowerCase() === vowels[j]) {
+//          resultArray.push(input[I])
+//         }
+//     }
+// }
+
+// var resultString = resultArray.join('').toUpperCase();
+
+// console.log(resultString);
+
+// Parsity way
+
+for (let I = 0; I < input.length; I++) {
+    const letter = input[I].toLowerCase();
+
+    if (letter === 'e' || letter === 'u') {
+        resultArray.push(letter);
+    }
+    
+    for (let j = 0; j < vowels.length; j++) {
+        const vowel = vowels[j];
+
+        if (letter === vowel) {
+            resultArray.push(letter);
+        }
+    }
+}
+
+const resultString = resultArray.join('').toUpperCase();
+
+console.log(resultString);
